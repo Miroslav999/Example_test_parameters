@@ -3,8 +3,6 @@ package framework;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.junit.jupiter.params.provider.Arguments;
-
 public class Scenario {
 	private String name="";
 	private List<ScenarioParameter> params;
@@ -27,4 +25,13 @@ public class Scenario {
 		return name;
 	}
 	
+	public String paramsToString() {
+		StringBuilder builder = new StringBuilder();
+		params.stream().forEach(e -> {
+			builder.append(e.getValue());
+			builder.append(" ");
+		});
+		return builder.toString();
+	}
+
 }

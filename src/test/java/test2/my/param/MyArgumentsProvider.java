@@ -9,7 +9,6 @@ import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.ArgumentsProvider;
 
 import framework.Parameter;
-import framework.Rule;
 import framework.TestFabric;
 
 public class MyArgumentsProvider implements ArgumentsProvider {
@@ -18,23 +17,22 @@ public class MyArgumentsProvider implements ArgumentsProvider {
     public Stream<? extends Arguments> provideArguments(ExtensionContext context) {
     	
     	List<Parameter> params = new ArrayList();
-		List<Rule> rules = null;
 
 		List<Integer> counts = new ArrayList<Integer>();
 		counts.add(0);
 		counts.add(1);
-		Parameter<Integer> reqCount = new Parameter<Integer>("количество реквизитов", counts);
+		Parameter<Integer> reqCount = new Parameter<Integer>("Parameter 1", counts);
 
 		List<String> types = new ArrayList<String>();
 		types.add("String");
 		types.add("Number");
 		types.add("Date");
-		Parameter<String> reqType = new Parameter<String>("тип реквизита", types);
+		Parameter<String> reqType = new Parameter<String>("Parameter 2", types);
 
 		List<String> tbp = new ArrayList<String>();
-		tbp.add("Абстрактный");
-		tbp.add("Может иметь таблицу");
-		Parameter<String> typesTbp = new Parameter<String>("тип ТБП", tbp);
+		tbp.add("Abstract");
+		tbp.add("Not abstract");
+		Parameter<String> typesTbp = new Parameter<String>("Parameter 3", tbp);
 
 		params.add(reqCount);
 		params.add(reqType);
