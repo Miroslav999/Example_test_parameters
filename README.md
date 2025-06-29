@@ -7,6 +7,7 @@ For example, at the input we have three testing parameters:
 The method framework.TestFabric.getTestsScenario(List<Parameter>) receives the test parameters as input, and returns a list of scenarios corresponding to a complete enumeration of the test parameters.
 
 Output:
+```
 0 String Abstract 
 0 String Not abstract 
 0 Number Abstract 
@@ -19,3 +20,4 @@ Output:
 1 Number Not abstract 
 1 Date Abstract 
 1 Date Not abstract 
+```
